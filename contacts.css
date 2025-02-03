@@ -1,0 +1,257 @@
+/* General Styles */
+body {
+    font-family: 'Dela Gothic One', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2f3136; /* Dark gray background */
+    color: #dcddde; /* Light gray text */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    font-weight: 400;
+}
+
+header {
+    background: #ff571a; /* Gradient blue */
+    color: #fff; /* White text */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 120px; /* Fixed height for the header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure the image doesn't overflow */
+    position: relative; /* Needed for absolute positioning of the image */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2; /* Ensure text is above the image */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.288); /* Add shadow to text for better visibility */
+    color: #fff; /* Ensure text color is white */
+}
+
+header img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%; /* Make the image cover the header height */
+    width: auto; /* Maintain aspect ratio */
+    opacity: 0.3; /* Make the image semi-transparent */
+    z-index: 1; /* Place the image behind the text */
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: transform 0.3s ease; /* Smooth transition for page content */
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #ffffff; /* Discord's blue */
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 8px;
+    font-size: 1.7em;
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+p {
+    font-size: 1em;
+    color: #b9bbbe; /* Light gray */
+    line-height: 1.7;
+}
+
+/* Board List Styles */
+.board-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    padding: 0 30px; /* More padding for left and right gap */
+}
+
+.board {
+    background-color: #40444b; /* Darker gray */
+    border: 1px solid #7289da; /* Blue border */
+    border-radius: 12px;
+    padding: 16px; /* Further reduce padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.3s, background-color 0.3s ease;
+    cursor: pointer;
+    height: 150px; /* Make boxes even smaller */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; /* Needed for absolute positioning of the image */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+}
+
+.board img {
+    position: absolute; /* Position the image absolutely within the board */
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the image cover the entire board */
+    height: 100%; /* Make the image cover the entire board */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    opacity: 0; /* Hide the image by default */
+    z-index: 1; /* Place the image behind the text */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and zoom */
+    transform: scale(1.1); /* Start slightly zoomed in */
+}
+
+.board:hover img {
+    opacity: 0.3; /* Show the image on hover */
+    transform: scale(1); /* Zoom out to normal size */
+}
+
+.board h3,
+.board p {
+    position: relative; /* Ensure text is above the image */
+    z-index: 2; /* Place text above the image */
+    color: #fff; /* Ensure text is white */
+}
+
+.board h3 {
+    margin-top: 0;
+    font-size: 1.3em; /* Smaller title */
+    font-weight: 600;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.board p {
+    font-size: 1em;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+    flex-grow: 1; /* Allow text to grow */
+}
+
+.board:hover {
+    transform: translateY(-8px); /* Slide up on hover */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    background-color: #33363d; /* Slightly lighter on hover */
+}
+
+.board:hover h3 {
+    color: #ff571a; /* Blue color on hover */
+}
+
+.board:hover p {
+    color: #ffffff; /* White text on hover */
+}
+
+/* Form Styles */
+#discussion-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#discussion-text {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #7289da;
+    border-radius: 8px;
+    background-color: #40444b;
+    color: #dcddde;
+    transition: all 0.3s ease;
+}
+
+#discussion-text:focus {
+    outline: none;
+    border-color: #7289da;
+    box-shadow: 0 0 8px rgba(114, 137, 218, 0.3); /* Blue shadow */
+    background-color: #353a40; /* Darker background on focus */
+}
+
+#discussion-form button {
+    padding: 12px;
+    background-color: #7289da;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#discussion-form button:hover {
+    background-color: #5d6f8e; /* Slightly darker blue on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #36393f; /* Dark gray footer */
+    color: #dcddde;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+/* Hover Effects for Links */
+a {
+    color: #7289da;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #99aab5; /* Lighter blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .board-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .board {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .board-list {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+}

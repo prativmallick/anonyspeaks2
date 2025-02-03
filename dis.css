@@ -1,0 +1,342 @@
+/* General Styles */
+body {
+
+    font-family:'Dela Gothic One',sans-serif;   
+     margin: 0;
+    padding: 0;
+    background-color: #000000d8; /* Light gray background */
+    color: #2d3748; /* Dark gray for text */
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 400;
+}
+
+header {
+    background:  #ff571a; /* Subtle blue to purple gradient */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    animation: headerAnimation 10s infinite alternate;
+}
+
+@keyframes headerAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700; /* Bolder heading */
+    letter-spacing: 1.5px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header p {
+    font-family: 'Days One', sans-serif;
+     font-size: 1em;
+    margin: 10px 0 0;
+    font-weight: 300;
+    animation: fadeIn 2.5s ease-in-out;
+    color: #252525;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #ffffff; /* Bright blue for headings */
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 10px;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    font-weight: 700; /* Bolder heading */
+    animation: slideIn 1s ease-in-out;
+    font-weight: 400;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+p {
+    font-size: 0.9em;
+    color: #4a5568; /* Slightly darker gray for paragraphs */
+    line-height: 1.8;
+}
+
+/* Discussion Box Styles */
+.discussion {
+    background-color: #6b6b6b; /* White background for discussion boxes */
+    border: 1px solid #e0e7ff; /* Light blue border */
+    border-radius: 12px;
+    margin-bottom: 25px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.discussion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.discussion .message {
+    font-size: 1.1em;
+    color: #111111; /* Dark gray for messages */
+    margin-bottom: 20px;
+    font-weight: 100;
+}
+
+.discussion .replies {
+    margin-top: 15px;
+}
+
+.discussion .reply {
+    background-color: #f0f4f8; /* Light blue background for replies */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: #4a5568; /* Dark gray for reply text */
+    font-size: 0.9em;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.discussion .reply button {
+    background-color: transparent;
+    border: none;
+    color: #4a90e2; /* Bright blue for buttons */
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.discussion .reply button:hover {
+    color: #357abd; /* Darker blue on hover */
+}
+
+.discussion .delete-discussion {
+    background-color: transparent;
+    color: #ff2020; /* Red for delete button */
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.discussion .delete-discussion:hover {
+    color: #ff4c4c; /* Darker red on hover */
+}
+
+/* Reply Form Styles */
+.reply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.reply-form textarea {
+    padding: 12px;
+    background-color: #ffffff;
+    color: #2d3748;
+    border: 1px solid #e0e7ff;
+    border-radius: 8px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.reply-form textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+}
+
+.reply-form button {
+    padding: 12px;
+    background-color: #4a90e2; /* Bright blue for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reply-form button:hover {
+    background-color: #357abd; /* Darker blue on hover */
+}
+
+/* New Discussion Form Styles */
+#discussion-form textarea {
+    padding: 15px;
+    background-color: #ffffff;
+    color: #2d3748;
+    border: 1px solid #e0e7ff;
+    border-radius: 12px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 120px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#discussion-form textarea::placeholder {
+    color: #a0aec0; /* Light gray placeholder text */
+    font-style: italic;
+    font-size: 0.9em; /* Editable placeholder size */
+}
+
+#discussion-form textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+}
+
+#discussion-form button {
+    padding: 15px 25px;
+    background-color: #4a90e2; /* Bright blue for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 600; /* Bolder button text */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 15px;
+}
+
+#discussion-form button:hover {
+    background-color: #357abd; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ffffff; /* White footer */
+    color: #4a5568; /* Dark gray text */
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    animation: fadeIn 3s ease-in-out;
+    display: none;
+}
+
+/* Hover Effects for Links */
+a {
+    color: #4a90e2; /* Bright blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #357abd; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .discussion {
+        padding: 20px;
+    }
+
+    .discussion .message {
+        font-size: 1em;
+    }
+
+    .discussion .reply {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .discussion {
+        padding: 15px;
+    }
+
+    .discussion .message {
+        font-size: 0.9em;
+    }
+
+    .discussion .reply {
+        font-size: 0.7em;
+    }
+}

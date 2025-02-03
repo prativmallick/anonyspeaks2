@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Discussions</title>
+    <link rel="stylesheet" href="dis.css">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Anime Discussions</h1>
+        <p>Welcome, Anon! Start or join a conversation about your favorite anime or manga.</p>
+    </header>
+
+    <main>
+        <!-- Form to start a new discussion -->
+        <section id="new-discussion">
+            <h2>Start a New Discussion</h2>
+            <form id="discussion-form">
+                <textarea id="discussion-text" placeholder="Write your message here..." required></textarea>
+                <button type="submit">Post</button>
+            </form>
+        </section>
+
+        <!-- Display all discussions -->
+        <section id="discussions">
+            <h2>Recent Discussions</h2>
+            <div id="discussion-list">
+                <!-- Discussions will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Anime Discussions. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="anime.js"></script>
+</body>
+</html>

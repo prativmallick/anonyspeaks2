@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="contacts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="ESDPIC.png" alt="Background Image">
+        <h1 style="padding: 7px;">AnonySpeaks</h1>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>What is AnonySpeaks?</h2>
+            <p style="font-size: smaller;">Welcome to AnonySpeaks where anonymity and freedom of expression reign. Share ideas, engage in
+                discussions, and explore content without the need for accounts or personal information. We prioritize
+                privacy, giving you the freedom to interact without boundaries. Our loose community guidelines keep the
+                space safe while respecting your freedom. Join us, stay anonymous, and be part of the conversation. <br>
+                Welcome to the homepage. Select a board to start browsing.</p>
+        </section>
+
+        <section id="boards">
+            <h2>Boards</h2>
+            <div class="board-list">
+                <div class="board" data-href="random.html">
+                    <img src="Happy Splatfest.jpg" alt="">
+                    <h3>Random</h3>
+                    <p>Random discussions and topics.</p>
+                </div>
+                <div class="board" data-href="tech.html">
+                    <img src="yu.jpg" alt="">
+                    <h3>Technology</h3>
+                    <p>Discussions about technology and gadgets.</p>
+                </div>
+                <div class="board" data-href="ani.html">
+                    <img src="'Edgerunners Anime Key Art' Poster, picture, metal print, paint by Cyberpunk 2077 _ Displate.jpg" alt="">
+                    <h3>Anime</h3>
+                    <p>Everything related to anime and manga.</p>
+                </div>
+                <div class="board" data-href="vg.html">
+                    <img src="game.jpg" alt="">
+                    <h3>Video Games</h3>
+                    <p>All about video games and gaming culture.</p>
+                </div>
+                <div class="board" data-href="sports.html">
+                    <img src="Messi.jpg" alt="">
+                    <h3>Sports</h3>
+                    <p>Discussions about sports and athletes.</p>
+                </div>
+                <div class="board" data-href="music.html">
+                    <img src="lp.jpg" alt="">
+                    <h3>Music</h3>
+                    <p>Everything related to music and artists.</p>
+                </div>
+                <div class="board" data-href="movies.html">
+                    <img src="lala.jpg" alt="">
+                    <h3>Movies</h3>
+                    <p>Discussions about movies and cinema.</p>
+                </div>
+                <div class="board" data-href="poli.html">
+                    <img src="Corporatocracy 2.jpg" alt="">
+                    <h3>Politics</h3>
+                    <p>All about politics and current events.</p>
+                </div>
+                <div class="board" data-href="hist.html">
+                    <img src="pyra.jpg" alt="">
+                    <h3>History</h3>
+                    <p>Discussions about historical events and figures.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Add event listener to each board
+        const boards = document.querySelectorAll('.board');
+        
+        boards.forEach(board => {
+            board.addEventListener('click', () => {
+                // Get the URL from the data-href attribute and navigate to it
+                const url = board.getAttribute('data-href');
+                window.location.href = url;
+            });
+        });
+    </script>
+</body>
+
+</html>
